@@ -1,6 +1,8 @@
 #pragma once
 
 #include <juce_audio_processors/juce_audio_processors.h>
+#include <dlfcn.h>
+#include "sunvox.h"
 
 class SunVoxPluginAudioProcessor : public juce::AudioProcessor
 {
@@ -35,5 +37,12 @@ public:
     void setStateInformation(const void* data, int sizeInBytes) override;
 
 private:
+    bool sunvoxInitialized;
+    int generatorModuleNum;
+    std::vector<float> tempBuffer;  // Interleaved buffer for SunVox
+
+    void initSunVox(double sampleRate);
+    void shutdownSunVox();
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SunVoxPluginAudioProcessor)
 };
