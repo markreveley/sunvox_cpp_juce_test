@@ -17,10 +17,10 @@ void SunVoxPluginAudioProcessorEditor::paint(juce::Graphics& g)
 
     g.setColour(juce::Colours::white);
     g.setFont(24.0f);
-    g.drawFittedText("SunVox Plugin", getLocalBounds(), juce::Justification::centred, 1);
+    g.drawFittedText("sunvox_juce_v1", getLocalBounds(), juce::Justification::centred, 1);
 
     g.setFont(14.0f);
-    g.drawFittedText("Objective #1: Basic Plugin",
+    g.drawFittedText("Objective #1: Basic Plugin (No DSP)",
                      getLocalBounds().reduced(20).translated(0, 40),
                      juce::Justification::centred, 1);
 }

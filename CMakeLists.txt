@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(SunVoxPlugin VERSION 0.0.1)
+project(sunvox_juce_v1 VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,7 +16,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(JUCE)
 
 # Create the plugin
-juce_add_plugin(SunVoxPlugin
+juce_add_plugin(sunvox_juce_v1
     COMPANY_NAME "SunVox"
     IS_SYNTH TRUE
     NEEDS_MIDI_INPUT TRUE
@@ -27,18 +27,18 @@ juce_add_plugin(SunVoxPlugin
     PLUGIN_MANUFACTURER_CODE Svox
     PLUGIN_CODE Svx1
     FORMATS VST3 AU Standalone
-    PRODUCT_NAME "SunVox Plugin"
+    PRODUCT_NAME "sunvox_juce_v1"
 )
 
 # Add source files
-target_sources(SunVoxPlugin
+target_sources(sunvox_juce_v1
     PRIVATE
         Source/PluginProcessor.cpp
         Source/PluginEditor.cpp
 )
 
 # Link JUCE modules
-target_link_libraries(SunVoxPlugin
+target_link_libraries(sunvox_juce_v1
     PRIVATE
         juce::juce_audio_utils
     PUBLIC
@@ -48,7 +48,7 @@ target_link_libraries(SunVoxPlugin
 )
 
 # Compile definitions
-target_compile_definitions(SunVoxPlugin
+target_compile_definitions(sunvox_juce_v1
     PUBLIC
         JUCE_WEB_BROWSER=0
         JUCE_USE_CURL=0
