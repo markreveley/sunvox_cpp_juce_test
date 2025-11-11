@@ -268,27 +268,6 @@ sv_unlock_slot(0);
 
 ---
 
-## 🔮 Evolution Path
-
-### v1 → v2 (DONE)
-- Added SunVox library integration
-- Implemented audio generation
-- Format conversion working
-
-### v2 → v3 (Future)
-- MIDI input processing
-- Note ON/OFF events
-- Envelope control
-- Parameter controls
-
-### v3 → v4 (Future)
-- Multiple modules
-- Effect chains
-- Pattern/sequence support
-- Load .sunvox files
-
----
-
 ## 📚 Key Files Reference
 
 | File | Purpose | Lines |
