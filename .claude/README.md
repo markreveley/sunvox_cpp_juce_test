@@ -1,12 +1,16 @@
 # .claude/ Directory
 
-This directory contains **Claude Code-specific context and instructions** for working on this project.
+This directory contains **detailed Claude Code context and workflows** for this project.
+
+## 🎯 Entry Point
+
+**Note**: Claude Code automatically loads `/claude.md` on startup. That file provides the critical "what to do now" context. This directory contains detailed reference documentation.
 
 ## 📁 What's Here
 
 | File | Purpose | Read When |
 |------|---------|-----------|
-| **[state.md](state.md)** | Current state & next actions | **READ THIS FIRST** ⭐ |
+| **[state.md](state.md)** | Detailed current state & validation | Need comprehensive status |
 | **[context.md](context.md)** | Project architecture & design | Need implementation details |
 | **[workflows.md](workflows.md)** | Common development tasks | Need to do specific task |
 | **README.md** | This file - directory overview | Understanding structure |
@@ -15,21 +19,30 @@ This directory contains **Claude Code-specific context and instructions** for wo
 
 **If you're a Claude instance starting work on this project:**
 
-1. **READ [state.md](state.md) FIRST** - It tells you:
-   - What's the current state
-   - What to do next
-   - How to build/test
-   - Expected results
+### Priority 1: `/claude.md` (Auto-loaded ✨)
+The root `claude.md` file is **automatically loaded** and tells you:
+- What's the immediate next action
+- Current project status
+- Quick build/test commands
+- What to do vs what not to do
 
-2. **Then [context.md](context.md)** - If you need to understand:
-   - Project architecture
-   - Tech stack choices
+### Priority 2: This Directory (Referenced)
+Consult these files when you need details:
+
+1. **[state.md](state.md)** - For comprehensive state info:
+   - Full test validation checklist
+   - Detailed status
+   - All build variations
+
+2. **[context.md](context.md)** - For architecture understanding:
+   - Component diagrams
+   - Tech stack rationale
    - Design decisions
 
-3. **Then [workflows.md](workflows.md)** - If you need to:
-   - Perform common tasks
-   - Follow established patterns
-   - Understand processes
+3. **[workflows.md](workflows.md)** - For specific tasks:
+   - Build workflows
+   - Debug procedures
+   - Git operations
 
 ## 🤔 Why This Directory Exists
 
