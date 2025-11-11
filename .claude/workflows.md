@@ -188,22 +188,22 @@ cmake --build . --config Release -- VERBOSE=1
 
 ### Update State After Changes
 ```bash
-# Edit .claude/state.md
-nano .claude/state.md
+# Edit .claude/plan.md
+nano .claude/plan.md
 
 # Update:
 # - "Last Updated" date
 # - Status checkboxes if objectives changed
 # - Test results if you ran tests
-# - Known issues if you found bugs
+# - Known limitations if you found bugs
 ```
 
 ### Document New Feature
 When adding a feature:
 
-1. **Update context.md**: Add architecture section
+1. **Update architecture.md**: Add architecture section
 2. **Update workflows.md**: Add "how to use" workflow
-3. **Update state.md**: Update status/objectives
+3. **Update plan.md**: Update status/objectives
 4. **Update main docs**: Create/update feature-specific .md file
 
 ### Generate Documentation from Code
@@ -303,7 +303,7 @@ tar -czf sunvox_juce_v2-v2.0.0-linux-x86_64.tar.gz sunvox_juce_v2-package/
 sed -i 's/VERSION 2.0.0/VERSION 2.1.0/' CMakeLists.txt
 
 # Update docs
-sed -i 's/Version: 2.0.0/Version: 2.1.0/' .claude/state.md
+sed -i 's/Version: 2.0.0/Version: 2.1.0/' .claude/plan.md
 sed -i 's/v2.0.0/v2.1.0/' sunvox_juce_v2.md
 
 # Commit version bump

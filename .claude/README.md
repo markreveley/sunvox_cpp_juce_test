@@ -10,8 +10,8 @@ This directory contains **detailed Claude Code context and workflows** for this 
 
 | File | Purpose | Read When |
 |------|---------|-----------|
-| **[state.md](state.md)** | Detailed current state & validation | Need comprehensive status |
-| **[context.md](context.md)** | Project architecture & design | Need implementation details |
+| **[plan.md](plan.md)** | Project plan, objectives & status | Need comprehensive status |
+| **[architecture.md](architecture.md)** | Project architecture & design | Need implementation details |
 | **[workflows.md](workflows.md)** | Common development tasks | Need to do specific task |
 | **README.md** | This file - directory overview | Understanding structure |
 
@@ -29,12 +29,12 @@ The root `claude.md` file is **automatically loaded** and tells you:
 ### Priority 2: This Directory (Referenced)
 Consult these files when you need details:
 
-1. **[state.md](state.md)** - For comprehensive state info:
+1. **[plan.md](plan.md)** - For comprehensive project plan:
    - Full test validation checklist
-   - Detailed status
-   - All build variations
+   - Objectives (complete + future)
+   - Current status and limitations
 
-2. **[context.md](context.md)** - For architecture understanding:
+2. **[architecture.md](architecture.md)** - For architecture understanding:
    - Component diagrams
    - Tech stack rationale
    - Design decisions
@@ -60,14 +60,14 @@ Similar to:
 
 ## 📝 Maintaining These Files
 
-### state.md
+### plan.md
 - **Update**: After every major change
-- **Contains**: Current status, next actions, test results
+- **Contains**: Objectives, status, limitations, test results
 - **Most important**: Keep "IMMEDIATE NEXT ACTION" up to date
 
-### context.md
+### architecture.md
 - **Update**: When architecture changes
-- **Contains**: Tech decisions, design rationale
+- **Contains**: Tech decisions, design rationale, component structure
 - **Stable**: Rarely changes once established
 
 ### workflows.md
@@ -85,8 +85,8 @@ Project Documentation Structure:
 │
 ├── .claude/                ← Claude Code-specific
 │   ├── README.md           ← You are here
-│   ├── state.md            ← Project state & objectives (merged plan.md)
-│   ├── context.md          ← Architecture & design decisions
+│   ├── plan.md             ← Project plan & objectives
+│   ├── architecture.md     ← Architecture & design decisions
 │   └── workflows.md        ← How-to guides for common tasks
 │
 ├── sunvox_juce_v1.md       ← v1 implementation details
@@ -107,11 +107,11 @@ Project Documentation Structure:
 This `.claude/` directory structure is a **proposed convention** for making AI coding assistants more effective. Key principles:
 
 1. **claude.md auto-loads**: Entry point with immediate action
-2. **state.md for details**: Comprehensive status, objectives, future plans
-3. **Separate concerns**: state vs context vs workflows
+2. **plan.md for details**: Comprehensive objectives, status, future plans
+3. **Separate concerns**: plan vs architecture vs workflows
 4. **Actionable instructions**: Tell Claude what to do
 5. **Expected results**: Define success criteria
-6. **Keep updated**: State changes frequently, context rarely
+6. **Keep updated**: Plan changes frequently, architecture rarely
 
 If this works well, it could become a standard for AI-assisted development projects!
 

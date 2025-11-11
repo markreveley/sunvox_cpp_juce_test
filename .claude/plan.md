@@ -86,6 +86,23 @@ cp -r build/sunvox_juce_v2_artefacts/VST3/sunvox_juce_v2.vst3 ~/.vst3/
 
 ---
 
+## 🐛 Known Limitations
+
+### Current Version (v2)
+1. **Fixed Note**: Always plays 440Hz, no MIDI processing
+2. **No Envelope**: Note stays on continuously
+3. **No Parameters**: Can't adjust Generator settings
+4. **Single Note**: No polyphony support
+5. **No Persistence**: Settings not saved between sessions
+
+### Architectural Constraints
+1. **Linux Only**: Build tested on Linux x86_64 only
+2. **Dynamic Library**: Requires sunvox.so at runtime
+3. **Single Slot**: Only uses SunVox slot 0
+4. **No Input**: Doesn't process audio input (synth only)
+
+---
+
 ## 🚨 Common Issues
 
 ### Build fails with "JUCE not found"
@@ -128,7 +145,7 @@ The code is **ALREADY COMPLETE**. Do NOT write new code unless asked.
 - ❌ Ignore the testing priority
 
 ### Quick Reference Files
-- **Architecture**: [context.md](context.md)
+- **Architecture**: [architecture.md](architecture.md)
 - **Workflows**: [workflows.md](workflows.md)
 - **Implementation v2**: [../sunvox_juce_v2.md](../sunvox_juce_v2.md)
 - **Research notes**: [../research.md](../research.md)

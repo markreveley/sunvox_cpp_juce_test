@@ -249,25 +249,6 @@ sv_unlock_slot(0);
 
 ---
 
-## 🐛 Known Limitations
-
-### Current Version (v2)
-
-1. **Fixed Note**: Always plays 440Hz, no MIDI processing
-2. **No Envelope**: Note stays on continuously
-3. **No Parameters**: Can't adjust Generator settings
-4. **Single Note**: No polyphony support
-5. **No Persistence**: Settings not saved between sessions
-
-### Architectural Constraints
-
-1. **Linux Only**: Build tested on Linux x86_64 only
-2. **Dynamic Library**: Requires sunvox.so at runtime
-3. **Single Slot**: Only uses SunVox slot 0
-4. **No Input**: Doesn't process audio input (synth only)
-
----
-
 ## 📚 Key Files Reference
 
 | File | Purpose | Lines |
