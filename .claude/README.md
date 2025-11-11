@@ -81,20 +81,17 @@ Similar to:
 Project Documentation Structure:
 
 /
-├── README.md               ← User-facing: "What is this project?"
-├── plan.md                 ← Historical: Original objectives
-├── STATUS.md               ← Can be merged into README or removed
+├── claude.md               ← Auto-loaded entry point ⭐
 │
-├── .claude/                ← Claude Code-specific ⭐
+├── .claude/                ← Claude Code-specific
 │   ├── README.md           ← You are here
-│   ├── state.md            ← Current state (read first)
-│   ├── context.md          ← Architecture & design
-│   └── workflows.md        ← How-to guides
+│   ├── state.md            ← Project state & objectives (merged plan.md)
+│   ├── context.md          ← Architecture & design decisions
+│   └── workflows.md        ← How-to guides for common tasks
 │
-└── docs/                   ← Detailed implementation docs
-    ├── sunvox_juce_v1.md
-    ├── sunvox_juce_v2.md
-    └── research.md
+├── sunvox_juce_v1.md       ← v1 implementation details
+├── sunvox_juce_v2.md       ← v2 implementation details
+└── research.md             ← SunVox integration research
 ```
 
 ## 🚀 Benefits
@@ -109,11 +106,12 @@ Project Documentation Structure:
 
 This `.claude/` directory structure is a **proposed convention** for making AI coding assistants more effective. Key principles:
 
-1. **state.md is always the entry point**
-2. **Separate concerns**: state vs context vs workflows
-3. **Actionable instructions**: Tell Claude what to do
-4. **Expected results**: Define success criteria
-5. **Keep updated**: State changes frequently, context rarely
+1. **claude.md auto-loads**: Entry point with immediate action
+2. **state.md for details**: Comprehensive status, objectives, future plans
+3. **Separate concerns**: state vs context vs workflows
+4. **Actionable instructions**: Tell Claude what to do
+5. **Expected results**: Define success criteria
+6. **Keep updated**: State changes frequently, context rarely
 
 If this works well, it could become a standard for AI-assisted development projects!
 
