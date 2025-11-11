@@ -41,7 +41,7 @@ cmake --build . --config Release
 A JUCE audio plugin (VST3/Standalone) that integrates the SunVox DSP library to generate a 440Hz tone using SunVox's Generator module.
 
 **Key Points**:
-- Both objectives from [plan.md](plan.md) are DONE
+- Both objectives are DONE (see [.claude/state.md](.claude/state.md))
 - Code compiles successfully on Linux x86_64
 - Plugin generates audio (not silence)
 - Ready for user testing
@@ -69,10 +69,9 @@ A JUCE audio plugin (VST3/Standalone) that integrates the SunVox DSP library to 
 
 For deeper context, see:
 
-- **[.claude/state.md](.claude/state.md)** - Detailed current state, test validation
+- **[.claude/state.md](.claude/state.md)** - Project state, objectives, test validation
 - **[.claude/context.md](.claude/context.md)** - Architecture, design decisions
 - **[.claude/workflows.md](.claude/workflows.md)** - Common tasks, how-tos
-- **[plan.md](plan.md)** - Original objectives (both complete)
 - **[sunvox_juce_v2.md](sunvox_juce_v2.md)** - Current implementation details
 - **[research.md](research.md)** - SunVox integration research
 

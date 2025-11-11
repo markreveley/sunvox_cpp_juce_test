@@ -1,4 +1,4 @@
-# Current Project State
+# Project State & Objectives
 
 **Last Updated**: November 6, 2025
 **Version**: 2.0.0 (sunvox_juce_v2)
@@ -47,14 +47,25 @@ cp -r build/sunvox_juce_v2_artefacts/VST3/sunvox_juce_v2.vst3 ~/.vst3/
 
 ---
 
-## 📊 Objectives Status
+## 📊 Objectives
 
-| # | Objective | Status | Implementation | Docs |
-|---|-----------|--------|----------------|------|
-| 1 | Basic JUCE plugin that loads | ✅ COMPLETE | sunvox_juce_v1 | [sunvox_juce_v1.md](../sunvox_juce_v1.md) |
-| 2 | SunVox DSP integration + tone | ✅ COMPLETE | sunvox_juce_v2 | [sunvox_juce_v2.md](../sunvox_juce_v2.md) |
+**Project Goal**: Create the most bare bones version of a VST plugin using JUCE framework which contains DSP code from SunVox tracker.
 
-**Both objectives from [plan.md](../plan.md) are DONE.**
+### Objective #1: ✅ COMPLETE
+**Create the simplest possible JUCE plugin that loads**
+
+- **Status**: COMPLETE (11/6/25)
+- **Implementation**: sunvox_juce_v1
+- **Documentation**: [sunvox_juce_v1.md](../sunvox_juce_v1.md)
+- **Output**: VST3 + Standalone plugin that loads successfully (outputs silence)
+
+### Objective #2: ✅ COMPLETE
+**Create the simplest variant that loads SunVox DSP and emits a tone**
+
+- **Status**: COMPLETE (11/6/25)
+- **Implementation**: sunvox_juce_v2
+- **Documentation**: [sunvox_juce_v2.md](../sunvox_juce_v2.md)
+- **Output**: VST3 + Standalone plugin with SunVox Generator generating 440Hz tone
 
 ---
 
@@ -118,23 +129,9 @@ The code is **ALREADY COMPLETE**. Do NOT write new code unless asked.
 
 ### Quick Reference Files
 - **Architecture**: [context.md](context.md)
+- **Workflows**: [workflows.md](workflows.md)
 - **Implementation v2**: [../sunvox_juce_v2.md](../sunvox_juce_v2.md)
-- **Original plan**: [../plan.md](../plan.md)
 - **Research notes**: [../research.md](../research.md)
-
----
-
-## 📝 Next Steps (Future, NOT Now)
-
-Only after successful testing:
-- v3: MIDI input processing for note control
-- v3: Envelope control (ADSR)
-- v3: Polyphony (multiple notes)
-- v3: Parameter controls for Generator
-- v4: Load SunVox project files (.sunvox)
-- v4: Additional effect modules
-
-**But first: BUILD AND TEST v2!**
 
 ---
 
@@ -152,4 +149,71 @@ When testing is complete, verify:
 
 ---
 
-**Status Last Verified**: November 6, 2025 - All tests passing on Linux x86_64
+## 🔮 Future Objectives (After Testing)
+
+**Note**: These are potential future directions. Current priority is **testing v2** to validate the integration approach.
+
+### Objective #3: MIDI Input Processing (v3)
+**Goal**: Process MIDI input to control note generation
+
+**Features**:
+- Respond to MIDI Note ON/OFF events
+- Map MIDI note numbers to SunVox notes
+- Velocity control
+- Basic envelope (ADSR)
+- Polyphony (multiple simultaneous notes)
+
+**Technical**:
+- Process `MidiBuffer` in `processBlock()`
+- Send `sv_send_event()` for each MIDI message
+- Track active notes for note OFF
+- Manage multiple Generator instances or use polyphonic module
+
+### Objective #4: Parameter Controls (v3)
+**Goal**: Expose Generator parameters to DAW
+
+**Features**:
+- Volume control
+- Waveform selection (sine, square, saw, triangle)
+- Filter cutoff/resonance
+- Attack/Decay/Sustain/Release controls
+
+**Technical**:
+- JUCE `AudioProcessorValueTreeState`
+- Parameter automation support
+- `sv_set_module_ctl_value()` for SunVox parameters
+- GUI sliders/knobs
+
+### Objective #5: Advanced Synthesis (v4)
+**Goal**: Multiple modules and effect chains
+
+**Features**:
+- Multiple SunVox modules (not just Generator)
+- Effect modules (reverb, delay, filter, distortion)
+- Module routing/patching
+- Save/load module configurations
+
+**Technical**:
+- `sv_new_module()` for various module types
+- `sv_connect_module()` for routing
+- Module management system
+- Preset system
+
+### Objective #6: Pattern Support (v4)
+**Goal**: Load and play SunVox patterns/projects
+
+**Features**:
+- Load .sunvox files
+- Pattern playback
+- Timeline/sequencer integration
+- DAW tempo sync
+
+**Technical**:
+- `sv_load()` for project files
+- `sv_play()` for pattern playback
+- Sync with DAW transport
+- Pattern editing (future)
+
+---
+
+**Reference**: See [research.md](../research.md) for notes from the SunVox developer about the viability of this approach.
