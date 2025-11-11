@@ -1,8 +1,48 @@
 # Project Status - sunvox_cpp_juce_test
 
 **Last Updated**: November 6, 2025
-**Current Branch**: claude/reference-p-011CUsGW1g8gT56dmFPP1qno
+**Current Branch**: main (merged from claude/reference-p-011CUsGW1g8gT56dmFPP1qno)
 **Version**: 2.0.0 (sunvox_juce_v2)
+
+---
+
+## ⚡ IMMEDIATE NEXT ACTION
+
+**The code is COMPLETE. Your job is to help the user BUILD and TEST the plugins.**
+
+### Step 1: Build the Plugin
+```bash
+mkdir build && cd build
+cmake ..
+cmake --build . --config Release
+```
+
+**Expected Output**:
+- ✅ `build/sunvox_juce_v2_artefacts/Standalone/sunvox_juce_v2` (~22MB)
+- ✅ `build/sunvox_juce_v2_artefacts/VST3/sunvox_juce_v2.vst3/` (~20MB)
+
+### Step 2: Test the Standalone Plugin
+```bash
+./build/sunvox_juce_v2_artefacts/Standalone/sunvox_juce_v2
+```
+
+**Expected Result**:
+- ✅ Window opens showing "sunvox_juce_v2"
+- ✅ **You hear a continuous 440Hz tone** (A4 note)
+- ✅ Tone plays immediately on launch
+
+### Step 3: Test the VST3 Plugin (Optional)
+```bash
+cp -r build/sunvox_juce_v2_artefacts/VST3/sunvox_juce_v2.vst3 ~/.vst3/
+```
+Then load in a DAW (Reaper, Ableton, etc.)
+
+**Expected Result**:
+- ✅ Plugin appears under "SunVox" manufacturer
+- ✅ Loads without errors
+- ✅ Plays 440Hz tone when track is active
+
+---
 
 ## 🎯 Objectives Status
 
@@ -10,6 +50,8 @@
 |-----------|--------|---------------|
 | #1: Basic JUCE plugin that loads | ✅ COMPLETE | [sunvox_juce_v1.md](sunvox_juce_v1.md) |
 | #2: SunVox DSP integration with tone | ✅ COMPLETE | [sunvox_juce_v2.md](sunvox_juce_v2.md) |
+
+**Both objectives from [plan.md](plan.md) are DONE. Now we TEST.**
 
 ## 📦 What's Been Built
 
@@ -94,13 +136,30 @@ Potential v3 enhancements:
 
 ## 💡 For New Claude Instances
 
-If you're a Claude instance starting work on this project:
+**If you're a Claude instance starting work on this project, READ THIS:**
 
-1. **Read this file first** to understand current state
-2. **Check the branch**: You should be on `claude/reference-p-011CUsGW1g8gT56dmFPP1qno`
-3. **Read the docs**: Start with [sunvox_juce_v2.md](sunvox_juce_v2.md) for current implementation
-4. **Review history**: See [research.md](research.md) for integration approach
-5. **Build status**: Both v1 and v2 compile successfully
+### Your Mission
+The code is **ALREADY COMPLETE**. Both objectives are done. Your job is NOT to write code.
+
+**Your job is to help the user BUILD and TEST the existing plugins.**
+
+### What to do
+1. ✅ **Read the "IMMEDIATE NEXT ACTION" section above** (that's your task)
+2. ✅ **Help user build** - Guide them through the cmake build process
+3. ✅ **Help user test** - Run the standalone plugin, verify the 440Hz tone plays
+4. ✅ **Troubleshoot if needed** - If build fails, help debug
+5. ✅ **Report results** - Tell user if test succeeded or what went wrong
+
+### What NOT to do
+- ❌ Don't start coding new features
+- ❌ Don't ask "what should we build?"
+- ❌ Don't plan new objectives
+- ❌ First priority is TESTING what's already built
+
+### Reference Docs (if needed for troubleshooting)
+- [sunvox_juce_v2.md](sunvox_juce_v2.md) - Current implementation details
+- [research.md](research.md) - SunVox integration approach
+- [plan.md](plan.md) - Original objectives (both complete)
 
 ## ✅ Validation Checklist
 
